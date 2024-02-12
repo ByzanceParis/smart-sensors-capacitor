@@ -13,7 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@byzance/smart-sensors-capacitor": "github:ByzanceParis/ByzanceParis-smart-sensors-capacitor",
+    "@byzance/smart-sensors-capacitor": "github:ByzanceParis/smart-sensors-capacitor",
     "@capacitor/android": "^5.0.0",
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
