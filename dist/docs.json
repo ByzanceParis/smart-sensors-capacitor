@@ -1,0 +1,305 @@
+{
+  "api": {
+    "name": "SmartSensorsManagerPlugin",
+    "slug": "smartsensorsmanagerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "initManager",
+        "signature": "(configuration: ConfigurationOptions) => Promise<ManagerStatus>",
+        "parameters": [
+          {
+            "name": "configuration",
+            "docs": "",
+            "type": "ConfigurationOptions"
+          }
+        ],
+        "returns": "Promise<ManagerStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ManagerStatus",
+          "ConfigurationOptions"
+        ],
+        "slug": "initmanager"
+      },
+      {
+        "name": "setLedsState",
+        "signature": "(ledState: LedStateConfig) => Promise<ManagerStatus>",
+        "parameters": [
+          {
+            "name": "ledState",
+            "docs": "",
+            "type": "LedStateConfig"
+          }
+        ],
+        "returns": "Promise<ManagerStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ManagerStatus",
+          "LedStateConfig"
+        ],
+        "slug": "setledsstate"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "ManagerStatus",
+      "slug": "managerstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "errorMsg",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "ConfigurationOptions",
+      "slug": "configurationoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "sensor",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "SensorType"
+          ],
+          "type": "SensorType"
+        },
+        {
+          "name": "connector",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [
+            "ConnectorType"
+          ],
+          "type": "ConnectorType"
+        },
+        {
+          "name": "apiKey",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "apiSecret",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "apiEndpoint",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        }
+      ]
+    },
+    {
+      "name": "LedStateConfig",
+      "slug": "ledstateconfig",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "state",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean"
+        },
+        {
+          "name": "ids",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | string[] | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [
+    {
+      "name": "SensorType",
+      "slug": "sensortype",
+      "members": [
+        {
+          "name": "LEDS",
+          "value": "\"leds\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "RFID",
+          "value": "\"rfid\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "MAGNETIC",
+          "value": "\"magnetic\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "TEMPERATURE",
+          "value": "\"temperature\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "HUMIDITY",
+          "value": "\"humidity\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "PRESSURE",
+          "value": "\"pressure\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "ACCELEROMETER",
+          "value": "\"accelerometer\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "GYROSCOPE",
+          "value": "\"gyroscope\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "GPS",
+          "value": "\"gps\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "CAMERA",
+          "value": "\"camera\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "MICROPHONE",
+          "value": "\"microphone\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "SPEAKER",
+          "value": "\"speaker\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "DISPLAY",
+          "value": "\"display\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "BUTTON",
+          "value": "\"button\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "SWITCH",
+          "value": "\"switch\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "POTENTIOMETER",
+          "value": "\"potentiometer\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "JOYSTICK",
+          "value": "\"joystick\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "SLIDER",
+          "value": "\"slider\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "ROTARY",
+          "value": "\"rotary\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "TOUCH",
+          "value": "\"touch\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "PROXIMITY",
+          "value": "\"proximity\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "DISTANCE",
+          "value": "\"distance\"",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    },
+    {
+      "name": "ConnectorType",
+      "slug": "connectortype",
+      "members": [
+        {
+          "name": "WIFI",
+          "value": "\"wifi\"",
+          "tags": [],
+          "docs": ""
+        },
+        {
+          "name": "BLE",
+          "value": "\"ble\"",
+          "tags": [],
+          "docs": ""
+        }
+      ]
+    }
+  ],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
