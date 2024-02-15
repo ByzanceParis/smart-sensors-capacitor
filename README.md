@@ -7,7 +7,7 @@ This is a draft versions, namaing could change a bit.
 ## Installation
 
 ```bash
-npm install ByzanceParis/ByzanceParis-smart-sensors-capacitor
+npm install ByzanceParis/smart-sensors-capacitor
 npx cap sync
 ```
 ### iOS
