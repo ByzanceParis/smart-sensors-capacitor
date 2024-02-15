@@ -8,5 +8,17 @@ and comes with a very minimal shell for building an app.
 To run the provided example, you can use `npm start` command.
 
 ```bash
-npm start
+npm i 
+npm run start
+
+```
+
+To add ios and build 
+
+```bash
+npm run build
+npx cap init
+npx cap add ios 
+npx cap sync 
+npx cap open ios
 ```
