@@ -44,10 +44,11 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
     
     @objc func ledSetup(_ call: CAPPluginCall) {
         
-        var id = call.getString("id");
-        var speed = call.getString("speed");
-        var intensity = call.getString("intensity");
+        let id = call.getString("id") ?? "";
+        let speed = call.getString("speed") ?? "";
+        let intensity = call.getString("intensity") ?? "";
         
+
         self.bleManager?.ledSetup(id:id, speed:speed, intensity:intensity);
         self.callbackFn = call
     }

@@ -53,9 +53,7 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
             print(stState)
             connectingPeripheral.writeValue(stState.data(using: .utf8)!, for: charact, type: .withResponse)
         }
-        
-        
-        
+
         NotificationCenter.default.post(name: Notification.Name(rawValue: "vistaBleMsg"), object: nil, userInfo : ["message": "connected"])
     }
     
@@ -63,6 +61,9 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
     
     public func ledSetup(id:String, speed:String, intensity:String ) {
         var stSetup = "setup|\(id)|ledpoint|\(speed)|\(intensity)"
+        connectingPeripheral.writeValue(stState.data(using: .utf8)!, for: charact, type: .withResponse)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "vistaBleMsg"), object: nil, userInfo : ["message": "connected"])
+        
     }
     
     
