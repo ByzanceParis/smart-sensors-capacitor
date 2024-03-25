@@ -1,6 +1,6 @@
 {
   "name": "@byzance/smart-sensors-capacitor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This plugin allow to connect and manage Byzance Sensors. This is a draft versions, namaing could change a bit.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
