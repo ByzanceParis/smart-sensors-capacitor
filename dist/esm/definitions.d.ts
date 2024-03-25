@@ -1,6 +1,7 @@
 export interface SmartSensorsManagerPlugin {
     initManager(configuration: ConfigurationOptions): Promise<ManagerStatus>;
     setLedsState(ledState: LedStateConfig): Promise<ManagerStatus>;
+    ledSetup(setup: any): Promise<ManagerStatus>;
 }
 export interface ConfigurationOptions {
     sensor: SensorType;

@@ -25,4 +25,13 @@ export class SmartSensorsManagerWeb
 
   }
 
+  async ledSetup(setup: any): Promise<ManagerStatus> {
+    console.log(setup)
+    const error: ManagerStatus = {
+      status: false,
+      errorMsg: 'ledSetup Not implemented on web'
+    }
+    return error;
+  }
+
 }

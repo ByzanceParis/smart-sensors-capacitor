@@ -3,4 +3,5 @@ import type { ConfigurationOptions, LedStateConfig, ManagerStatus, SmartSensorsM
 export declare class SmartSensorsManagerWeb extends WebPlugin implements SmartSensorsManagerPlugin {
     initManager(configuration: ConfigurationOptions): Promise<ManagerStatus>;
     setLedsState(ledState: LedStateConfig): Promise<ManagerStatus>;
+    ledSetup(setup: any): Promise<ManagerStatus>;
 }

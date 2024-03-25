@@ -60,6 +60,13 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
     }
     
     
+    
+    public func ledSetup(id:String, speed:String, intensity:String ) {
+        var stSetup = "setup|\(id)|ledpoint|\(speed)|\(intensity)"
+    }
+    
+    
+    
     // public func turnOn(id:String){
     //     if(charact != nil){
     //         let stValue =  id

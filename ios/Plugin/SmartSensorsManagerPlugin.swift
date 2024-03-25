@@ -35,14 +35,21 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
             print(arrayValues)
             ids = arrayValues
         }
-        print(ids)
-        print(ids.count)
-        print(state)
         if (ids.count < 1) {
             ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
         }
-        print(ids)
         self.bleManager?.setLedsState(state:state, ids:ids)
+    }
+    
+    
+    @objc func ledSetup(_ call: CAPPluginCall) {
+        
+        var id = call.getString("id");
+        var speed = call.getString("speed");
+        var intensity = call.getString("intensity");
+        
+        self.bleManager?.ledSetup(id:id, speed:speed, intensity:intensity);
+        self.callbackFn = call
     }
 
 

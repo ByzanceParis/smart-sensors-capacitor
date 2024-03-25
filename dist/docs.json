@@ -42,6 +42,24 @@
           "LedStateConfig"
         ],
         "slug": "setledsstate"
+      },
+      {
+        "name": "ledSetup",
+        "signature": "(setup: any) => Promise<ManagerStatus>",
+        "parameters": [
+          {
+            "name": "setup",
+            "docs": "",
+            "type": "any"
+          }
+        ],
+        "returns": "Promise<ManagerStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ManagerStatus"
+        ],
+        "slug": "ledsetup"
       }
     ],
     "properties": []

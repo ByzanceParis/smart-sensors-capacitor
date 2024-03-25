@@ -16,5 +16,13 @@ export class SmartSensorsManagerWeb extends WebPlugin {
         };
         return error;
     }
+    async ledSetup(setup) {
+        console.log(setup);
+        const error = {
+            status: false,
+            errorMsg: 'ledSetup Not implemented on web'
+        };
+        return error;
+    }
 }
 //# sourceMappingURL=web.js.map
