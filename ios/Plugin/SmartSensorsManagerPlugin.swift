@@ -31,8 +31,6 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
         //        let ids = call.getArray("ids") ?? []
         var ids = [String]()
         if let arrayValues = call.getArray("ids")?.capacitor.replacingNullValues() as? [String] {
-            print("arrayValues")
-            print(arrayValues)
             ids = arrayValues
         }
         if (ids.count < 1) {
@@ -44,13 +42,12 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
     
     @objc func ledSetup(_ call: CAPPluginCall) {
         
-        let id = call.getString("id") ?? "";
-        let speed = call.getString("speed") ?? "";
+        let speed = call.getString("speed") ?? "1000";
         let intensity = call.getString("intensity") ?? "";
-        
 
-        self.bleManager?.ledSetup(id:id, speed:speed, intensity:intensity);
         self.callbackFn = call
+        self.bleManager?.ledSetup(speed:speed, intensity:intensity);
+        
     }
 
 
@@ -59,7 +56,8 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
         print(message)
       if (message == "connected") {
         self.callbackFn?.resolve([
-            "state": true
+            "state": true,
+            "message":message
         ])
       } else {
         self.callbackFn?.resolve([

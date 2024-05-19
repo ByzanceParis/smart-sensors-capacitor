@@ -28,6 +28,12 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
 
 
     public func setLedsState(state:Bool, ids: [String] ) {
+
+        
+        if (connectingPeripheral == nil) {
+            return;
+        }
+        
         var stState = ""
         var action = state ? "1":"0"
         
@@ -59,11 +65,31 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
     
     
     
-    public func ledSetup(id:String, speed:String, intensity:String ) {
-        var stSetup = "setup|\(id)|ledpoint|\(speed)|\(intensity)"
-        connectingPeripheral.writeValue(stState.data(using: .utf8)!, for: charact, type: .withResponse)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "vistaBleMsg"), object: nil, userInfo : ["message": "connected"])
+    public func ledSetup(speed:String, intensity:String ) {
         
+        
+        var stSetup = ""
+        let ids = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" ]
+        let ids1 = ids[...5]
+        for id in ids1 {
+            stSetup = "\(stSetup)setup|\(id)|ledpoint|\(speed)|\(intensity);"
+        }
+        connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
+
+        stSetup = ""
+        let ids2 = ids[6...]
+        for id in ids2 {
+            stSetup = "\(stSetup)setup|\(id)|ledpoint|\(speed)|\(intensity);"
+        }
+        connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
+        
+        
+        
+//
+//        let stSetup = "setup|\(id)|ledpoint|\(speed)|\(intensity);"
+//        connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "vistaBleMsg"), object: nil, userInfo : ["message": "connected"])
+//
     }
     
     
