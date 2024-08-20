@@ -34,4 +34,22 @@ export class SmartSensorsManagerWeb
     return error;
   }
 
+  async switchOn(setup: any): Promise<ManagerStatus> {
+    console.log(setup)
+    const error: ManagerStatus = {
+      status: false,
+      errorMsg: 'switchOn Not implemented on web'
+    }
+    return error;
+  }
+
+  async switchOff(setup: any): Promise<ManagerStatus> {
+    console.log(setup)
+    const error: ManagerStatus = {
+      status: false,
+      errorMsg: 'switchOff Not implemented on web'
+    }
+    return error;
+  }
+
 }

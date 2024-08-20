@@ -83,30 +83,17 @@ class BleManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate  {
         }
         connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
         
-        
-        
-//
-//        let stSetup = "setup|\(id)|ledpoint|\(speed)|\(intensity);"
-//        connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: "vistaBleMsg"), object: nil, userInfo : ["message": "connected"])
-//
     }
-    
-    
-    
-    // public func turnOn(id:String){
-    //     if(charact != nil){
-    //         let stValue =  id
-    //         connectingPeripheral.writeValue(stValue.data(using: .utf8)!, for: charact, type: .withResponse)
-    //     }
-    // }
 
-    // public func turnOff(id:String){
-    //     if(charact != nil){
-    //         let stValue =  "TURNOFF-" + id
-    //         connectingPeripheral.writeValue(stValue.data(using: .utf8)!, for: charact, type: .withResponse)
-    //     }
-    // }
+     public func switchOn(id:String){
+         var stSetup = "setState|\(id)|1;"
+         connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
+     }
+    
+     public func switchOff(id:String){
+         var stSetup = "setState|\(id)|0;"
+         connectingPeripheral.writeValue(stSetup.data(using: .utf8)!, for: charact, type: .withResponse)
+     }
 
     func initCentral() {
         print("Central launched!");

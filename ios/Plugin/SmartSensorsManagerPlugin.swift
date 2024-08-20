@@ -50,6 +50,20 @@ public class SmartSensorsManagerPlugin: CAPPlugin {
         
     }
 
+    @objc func switchOn(_ call: CAPPluginCall) {
+        let id = call.getString("speed") ?? "1000";
+        self.callbackFn = call
+        self.bleManager?.switchOn(id:id);
+    }
+
+    @objc func switchOff(_ call: CAPPluginCall) {
+        let id = call.getString("speed") ?? "1000";
+        self.callbackFn = call
+        self.bleManager?.switchOff(id:id);
+    }
+
+    
+    
 
     @objc func onBle(notification: Notification){
       let message = notification.userInfo!["message"] as! String
