@@ -61,6 +61,22 @@ var capacitorSmartSensorsManager = (function (exports, core) {
             };
             return error;
         }
+        async switchOn(setup) {
+            console.log(setup);
+            const error = {
+                status: false,
+                errorMsg: 'switchOn Not implemented on web'
+            };
+            return error;
+        }
+        async switchOff(setup) {
+            console.log(setup);
+            const error = {
+                status: false,
+                errorMsg: 'switchOff Not implemented on web'
+            };
+            return error;
+        }
     }
 
     var web = /*#__PURE__*/Object.freeze({

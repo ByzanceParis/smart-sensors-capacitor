@@ -60,6 +60,42 @@
           "ManagerStatus"
         ],
         "slug": "ledsetup"
+      },
+      {
+        "name": "switchOn",
+        "signature": "(setup: any) => Promise<ManagerStatus>",
+        "parameters": [
+          {
+            "name": "setup",
+            "docs": "",
+            "type": "any"
+          }
+        ],
+        "returns": "Promise<ManagerStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ManagerStatus"
+        ],
+        "slug": "switchon"
+      },
+      {
+        "name": "switchOff",
+        "signature": "(setup: any) => Promise<ManagerStatus>",
+        "parameters": [
+          {
+            "name": "setup",
+            "docs": "",
+            "type": "any"
+          }
+        ],
+        "returns": "Promise<ManagerStatus>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "ManagerStatus"
+        ],
+        "slug": "switchoff"
       }
     ],
     "properties": []
